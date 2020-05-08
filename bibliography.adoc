@@ -11,8 +11,7 @@
 
 - [[[NUG]]] link:$$https://www.unidata.ucar.edu/software/netcdf/documentation/4.4.1.1/$$[ The NetCDF User's Guide] for NetCDF version 4.4.1.1. 21 November 2016.
 
-- [[[OGC_WKT-CRS]]] link:$$http://docs.opengeospatial.org/is/12-063r5/12-063r5.html
-$$[ OGC Well-known text representation of coordinate reference systems]. OGC document 12-063r5. 1st May 2015. 
+- [[[OGC_WKT-CRS]]] link:$$http://docs.opengeospatial.org/is/12-063r5/12-063r5.html$$[ OGC Well-known text representation of coordinate reference systems]. OGC document 12-063r5. 1st May 2015. 
 
 - [[[OGP-EPSG]]] link:$$http://www.epsg.org$$[ OGP Surveying &amp; Positioning Committee] and link:$$http://www.epsg-registry.org$$[EPSG Geodetic Parameter Registry].
 
