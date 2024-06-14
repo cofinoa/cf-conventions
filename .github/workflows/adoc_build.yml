@@ -176,7 +176,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           zenodo_token: ${{ secrets.ZENODO_TOKEN }}
-          zenodo_deposition_id: 70601
+          zenodo_deposition_id: 70602
           zenodo_publish: false
           zenodo_sandbox: true
           commit_message: 'chore: update ${file_name} for Zenodo release'
