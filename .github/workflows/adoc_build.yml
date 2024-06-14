@@ -170,3 +170,21 @@ jobs:
           git config user.email github-actions@github.com
           git commit -m "Auto-generated from ${GITHUB_REPOSITORY}@${GITHUB_SHA}"
           git push
+      - name: Upload to Zenodo
+        id: release
+        uses: megasanjay/upload-to-zenodo@v2.0.1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          zenodo_token: ${{ secrets.ZENODO_TOKEN }}
+          zenodo_deposition_id: 70601
+          zenodo_publish: false
+          zenodo_sandbox: true
+          commit_message: 'chore: update ${file_name} for Zenodo release'
+          update_metadata_files: true
+          zenodo_json: true
+          #codemeta_json: true
+          #citation_cff: true
+
+      # Get the doi from the `release` step
+      - name: Get the output doi
+        run: echo "The released doi was ${{ steps.release.outputs.doi }}"
