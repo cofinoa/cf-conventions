@@ -1,9 +1,29 @@
-cff-version: 1.1.0
-message: "If you use this software, please cite it as below."
+abstract: <p>This document describes the CF conventions for climate and forecast metadata
+  designed to promote the processing and<br>sharing of files created with the netCDF
+  Application Programmer Interface [NetCDF]. The conventions define meta-<br>data
+  that provide a definitive description of what the data in each variable represents,
+  and of the spatial and temporal<br>properties of the data. This enables users of
+  data from different sources to decide which quantities are comparable, and<br>facilitates
+  building applications with powerful extraction, regridding, and display capabilities.<br>The
+  CF conventions generalize and extend the COARDS conventions [COARDS]. The extensions
+  include metadata<br>that provides a precise definition of each variable via specification
+  of a standard name, describes the vertical locations<br>corresponding to dimensionless
+  vertical coordinate values, and provides the spatial coordinates of non-rectilinear
+  grid-<br>ded data. Since climate and forecast data are often not simply representative
+  of points in space/time, other extensions<br>provide for the description of coordinate
+  intervals, multidimensional cells and climatological time coordinates, and<br>indicate
+  how a data value is representative of an interval or cell. This standard also relaxes
+  the COARDS constraints<br>on dimension order and specifies methods for reducing
+  the size of datasets.</p>
 authors:
-- family-names: Joe
-  given-names: Johnson
-orcid: https://orcid.org/0000-0000-0000-0000
-title:
-version: v1.11.0-rc4
-date-released: 2024-06-14
+  - affiliation: "Consejo Superior de Investigaciones Cient\xEDficas"
+    family-names: "Cofi\xF1o"
+    given-names: Antonio S.
+    orcid: 0000-0001-7719-979X
+cff-version: 1.2.0
+date-released: '2003-10-28'
+doi: 10.5072/zenodo.70602
+license:
+  - cc-by-4.0
+title: NetCDF Climate and Forecast (CF) Metadata Conventions
+version: '1.0'
