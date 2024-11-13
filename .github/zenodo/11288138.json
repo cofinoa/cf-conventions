@@ -1,0 +1,723 @@
+{
+  "access": {
+    "embargo": {
+      "active": false,
+      "reason": null
+    },
+    "files": "public",
+    "record": "public",
+    "status": "open"
+  },
+  "created": "2024-05-24T20:36:11.415571+00:00",
+  "custom_fields": {},
+  "deletion_status": {
+    "is_deleted": false,
+    "status": "P"
+  },
+  "files": {
+    "count": 1,
+    "enabled": true,
+    "entries": {
+      "cf-convention/cf-conventions-DOI.zip": {
+        "access": {
+          "hidden": false
+        },
+        "checksum": "md5:87f3086dfb45bf9e8c3e5281c06933f6",
+        "ext": "zip",
+        "id": "b1246cf0-7d07-4d22-b33e-deda194c415a",
+        "key": "cf-convention/cf-conventions-DOI.zip",
+        "links": {
+          "content": "https://zenodo.org/api/records/11288138/files/cf-convention/cf-conventions-DOI.zip/content",
+          "self": "https://zenodo.org/api/records/11288138/files/cf-convention/cf-conventions-DOI.zip"
+        },
+        "metadata": null,
+        "mimetype": "application/zip",
+        "size": 762176,
+        "storage_class": "L"
+      }
+    },
+    "order": [],
+    "total_bytes": 762176
+  },
+  "id": "11288138",
+  "is_draft": false,
+  "is_published": true,
+  "links": {
+    "access": "https://zenodo.org/api/records/11288138/access",
+    "access_grants": "https://zenodo.org/api/records/11288138/access/grants",
+    "access_links": "https://zenodo.org/api/records/11288138/access/links",
+    "access_request": "https://zenodo.org/api/records/11288138/access/request",
+    "access_users": "https://zenodo.org/api/records/11288138/access/users",
+    "archive": "https://zenodo.org/api/records/11288138/files-archive",
+    "archive_media": "https://zenodo.org/api/records/11288138/media-files-archive",
+    "communities": "https://zenodo.org/api/records/11288138/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/11288138/communities-suggestions",
+    "doi": "https://doi.org/10.5281/zenodo.11288138",
+    "draft": "https://zenodo.org/api/records/11288138/draft",
+    "files": "https://zenodo.org/api/records/11288138/files",
+    "latest": "https://zenodo.org/api/records/11288138/versions/latest",
+    "latest_html": "https://zenodo.org/records/11288138/latest",
+    "media_files": "https://zenodo.org/api/records/11288138/media-files",
+    "parent": "https://zenodo.org/api/records/11288137",
+    "parent_doi": "https://doi.org/10.5281/zenodo.11288137",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.11288137",
+    "parent_html": "https://zenodo.org/records/11288137",
+    "requests": "https://zenodo.org/api/records/11288138/requests",
+    "reserve_doi": "https://zenodo.org/api/records/11288138/draft/pids/doi",
+    "self": "https://zenodo.org/api/records/11288138",
+    "self_doi": "https://doi.org/10.5281/zenodo.11288138",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.11288138",
+    "self_html": "https://zenodo.org/records/11288138",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:11288138/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:11288138/sequence/default",
+    "versions": "https://zenodo.org/api/records/11288138/versions"
+  },
+  "media_files": {
+    "count": 0,
+    "enabled": false,
+    "entries": {},
+    "order": [],
+    "total_bytes": 0
+  },
+  "metadata": {
+    "creators": [
+      {
+        "affiliations": [
+          {
+            "id": "05cvfcr44",
+            "name": "National Center for Atmospheric Research"
+          }
+        ],
+        "person_or_org": {
+          "family_name": "Eaton",
+          "given_name": "Brian",
+          "name": "Eaton, Brian",
+          "type": "personal"
+        }
+      },
+      {
+        "affiliations": [
+          {
+            "id": "05v62cm79",
+            "name": "University of Reading"
+          },
+          {
+            "name": "UK MetOffice Hadley Center"
+          }
+        ],
+        "person_or_org": {
+          "family_name": "Gregory",
+          "given_name": "Jonathan",
+          "identifiers": [
+            {
+              "identifier": "0000-0003-1296-8644",
+              "scheme": "orcid"
+            }
+          ],
+          "name": "Gregory, Jonathan",
+          "type": "personal"
+        }
+      },
+      {
+        "affiliations": [
+          {
+            "name": "Lawrence Livermore National Laboratory"
+          },
+          {
+            "name": "PCMDI"
+          }
+        ],
+        "person_or_org": {
+          "family_name": "Drach",
+          "given_name": "Bob",
+          "name": "Drach, Bob",
+          "type": "personal"
+        }
+      },
+      {
+        "affiliations": [
+          {
+            "id": "041nk4h53",
+            "name": "Lawrence Livermore National Laboratory"
+          },
+          {
+            "name": "PCMDI"
+          }
+        ],
+        "person_or_org": {
+          "family_name": "Taylor",
+          "given_name": "Karl",
+          "identifiers": [
+            {
+              "identifier": "0000-0002-6491-2135",
+              "scheme": "orcid"
+            }
+          ],
+          "name": "Taylor, Karl",
+          "type": "personal"
+        }
+      },
+      {
+        "affiliations": [
+          {
+            "name": "NOAA PMEL"
+          }
+        ],
+        "person_or_org": {
+          "family_name": "Hankin",
+          "given_name": "Steve",
+          "name": "Hankin, Steve",
+          "type": "personal"
+        }
+      },
+      {
+        "affiliations": [
+          {
+            "id": "05v62cm79",
+            "name": "University of Reading"
+          }
+        ],
+        "person_or_org": {
+          "family_name": "Blower",
+          "given_name": "Jon",
+          "name": "Blower, Jon",
+          "type": "personal"
+        }
+      },
+      {
+        "affiliations": [
+          {
+            "name": "NSF Unidata"
+          }
+        ],
+        "person_or_org": {
+          "family_name": "Caron",
+          "given_name": "John",
+          "name": "Caron, John",
+          "type": "personal"
+        }
+      },
+      {
+        "affiliations": [
+          {
+            "id": "035a68863",
+            "name": "United States Geological Survey"
+          }
+        ],
+        "person_or_org": {
+          "family_name": "Signell",
+          "given_name": "Rich",
+          "name": "Signell, Rich",
+          "type": "personal"
+        }
+      },
+      {
+        "affiliations": [
+          {
+            "name": "UK Met Office"
+          }
+        ],
+        "person_or_org": {
+          "family_name": "Bentley",
+          "given_name": "Phil",
+          "name": "Bentley, Phil",
+          "type": "personal"
+        }
+      },
+      {
+        "affiliations": [
+          {
+            "id": "042nb2s44",
+            "name": "Massachusetts Institute of Technology"
+          }
+        ],
+        "person_or_org": {
+          "family_name": "Rappa",
+          "given_name": "Greg",
+          "name": "Rappa, Greg",
+          "type": "personal"
+        }
+      },
+      {
+        "affiliations": [
+          {
+            "id": "03ztgj037",
+            "name": "German Climate Computing Centre"
+          }
+        ],
+        "person_or_org": {
+          "family_name": "H\u00f6ck",
+          "given_name": "Heinke",
+          "identifiers": [
+            {
+              "identifier": "0000-0002-0131-1404",
+              "scheme": "orcid"
+            }
+          ],
+          "name": "H\u00f6ck, Heinke",
+          "type": "personal"
+        }
+      },
+      {
+        "affiliations": [
+          {
+            "id": "01wwwe276",
+            "name": "National Centre for Atmospheric Science"
+          },
+          {
+            "id": "04j4kad11",
+            "name": "Centre for Environmental Data Analysis"
+          }
+        ],
+        "person_or_org": {
+          "family_name": "Pamment",
+          "given_name": "Alison",
+          "identifiers": [
+            {
+              "identifier": "0000-0001-5040-4626",
+              "scheme": "orcid"
+            }
+          ],
+          "name": "Pamment, Alison",
+          "type": "personal"
+        }
+      },
+      {
+        "affiliations": [
+          {
+            "id": "01wwwe276",
+            "name": "National Centre for Atmospheric Science"
+          }
+        ],
+        "person_or_org": {
+          "family_name": "Juckes",
+          "given_name": "Martin",
+          "name": "Juckes, Martin",
+          "type": "personal"
+        }
+      },
+      {
+        "affiliations": [
+          {
+            "id": "00hgzve81",
+            "name": "Swedish Meteorological and Hydrological Institute"
+          }
+        ],
+        "person_or_org": {
+          "family_name": "Raspaud",
+          "given_name": "Martin",
+          "name": "Raspaud, Martin",
+          "type": "personal"
+        }
+      },
+      {
+        "affiliations": [
+          {
+            "name": "Excalibur Laboratories Inc"
+          }
+        ],
+        "person_or_org": {
+          "family_name": "Horne",
+          "given_name": "Randy",
+          "name": "Horne, Randy",
+          "type": "personal"
+        }
+      },
+      {
+        "affiliations": [
+          {
+            "name": "University of Texas"
+          }
+        ],
+        "person_or_org": {
+          "family_name": "Whiteaker",
+          "given_name": "Timothy",
+          "name": "Whiteaker, Timothy",
+          "type": "personal"
+        }
+      },
+      {
+        "affiliations": [
+          {
+            "id": "035a68863",
+            "name": "United States Geological Survey"
+          }
+        ],
+        "person_or_org": {
+          "family_name": "Blodgett",
+          "given_name": "David",
+          "name": "Blodgett, David",
+          "type": "personal"
+        }
+      },
+      {
+        "affiliations": [
+          {
+            "id": "04gyf1771",
+            "name": "University of California, Irvine"
+          }
+        ],
+        "person_or_org": {
+          "family_name": "Zender",
+          "given_name": "Charlie",
+          "name": "Zender, Charlie",
+          "type": "personal"
+        }
+      },
+      {
+        "affiliations": [
+          {
+            "id": "02h919y47",
+            "name": "European Organisation for the Exploitation of Meteorological Satellites"
+          }
+        ],
+        "person_or_org": {
+          "family_name": "Lee",
+          "given_name": "Daniel",
+          "identifiers": [
+            {
+              "identifier": "0000-0002-1041-232X",
+              "scheme": "orcid"
+            }
+          ],
+          "name": "Lee, Daniel",
+          "type": "personal"
+        }
+      },
+      {
+        "affiliations": [
+          {
+            "id": "01wwwe276",
+            "name": "National Centre for Atmospheric Science"
+          },
+          {
+            "id": "05v62cm79",
+            "name": "University of Reading"
+          }
+        ],
+        "person_or_org": {
+          "family_name": "Hassell",
+          "given_name": "David",
+          "identifiers": [
+            {
+              "identifier": "0000-0001-5106-7502",
+              "scheme": "orcid"
+            }
+          ],
+          "name": "Hassell, David",
+          "type": "personal"
+        }
+      },
+      {
+        "affiliations": [
+          {
+            "name": "Corteva Agriscience"
+          }
+        ],
+        "person_or_org": {
+          "family_name": "Snow",
+          "given_name": "Alan D.",
+          "name": "Snow, Alan D.",
+          "type": "personal"
+        }
+      },
+      {
+        "affiliations": [
+          {
+            "id": "05esem239",
+            "name": "Max Planck Institute for Meteorology"
+          }
+        ],
+        "person_or_org": {
+          "family_name": "K\u00f6lling",
+          "given_name": "Tobias",
+          "name": "K\u00f6lling, Tobias",
+          "type": "personal"
+        }
+      },
+      {
+        "affiliations": [
+          {
+            "id": "02z5nhe81",
+            "name": "National Oceanic and Atmospheric Administration"
+          },
+          {
+            "id": "00bdqav06",
+            "name": "Cooperative Institute for Research in Environmental Sciences"
+          }
+        ],
+        "person_or_org": {
+          "family_name": "Allured",
+          "given_name": "Dave",
+          "name": "Allured, Dave",
+          "type": "personal"
+        }
+      },
+      {
+        "affiliations": [
+          {
+            "id": "024jrkp82",
+            "name": "The HDF Group"
+          }
+        ],
+        "person_or_org": {
+          "family_name": "Jelenak",
+          "given_name": "Aleksandar",
+          "name": "Jelenak, Aleksandar",
+          "type": "personal"
+        }
+      },
+      {
+        "affiliations": [
+          {
+            "id": "02h919y47",
+            "name": "European Organisation for the Exploitation of Meteorological Satellites"
+          }
+        ],
+        "person_or_org": {
+          "family_name": "Soerensen",
+          "given_name": "Anders Meier",
+          "name": "Soerensen, Anders Meier",
+          "type": "personal"
+        }
+      },
+      {
+        "affiliations": [
+          {
+            "name": "OceanDataLab"
+          }
+        ],
+        "person_or_org": {
+          "family_name": "Gaultier",
+          "given_name": "Lucile",
+          "name": "Gaultier, Lucile",
+          "type": "personal"
+        }
+      },
+      {
+        "affiliations": [
+          {
+            "name": "OceanDataLab"
+          }
+        ],
+        "person_or_org": {
+          "family_name": "Herl\u00e9dan",
+          "given_name": "Sylvain",
+          "name": "Herl\u00e9dan, Sylvain",
+          "type": "personal"
+        }
+      },
+      {
+        "affiliations": [
+          {
+            "name": "Puerto del Estado, Madrid"
+          }
+        ],
+        "person_or_org": {
+          "family_name": "Manzano",
+          "given_name": "Fernando",
+          "name": "Manzano, Fernando",
+          "type": "personal"
+        }
+      },
+      {
+        "affiliations": [
+          {
+            "id": "00hgzve81",
+            "name": "Swedish Meteorological and Hydrological Institute"
+          }
+        ],
+        "person_or_org": {
+          "family_name": "B\u00e4rring",
+          "given_name": "Lars",
+          "identifiers": [
+            {
+              "identifier": "0000-0001-7280-2502",
+              "scheme": "orcid"
+            }
+          ],
+          "name": "B\u00e4rring, Lars",
+          "type": "personal"
+        }
+      },
+      {
+        "affiliations": [
+          {
+            "id": "02z5nhe81",
+            "name": "National Oceanic and Atmospheric Administration"
+          }
+        ],
+        "person_or_org": {
+          "family_name": "Barker",
+          "given_name": "Christopher",
+          "name": "Barker, Christopher",
+          "type": "personal"
+        }
+      },
+      {
+        "affiliations": [
+          {
+            "id": "01wwwe276",
+            "name": "National Centre for Atmospheric Science"
+          },
+          {
+            "id": "05v62cm79",
+            "name": "University of Reading"
+          }
+        ],
+        "person_or_org": {
+          "family_name": "Bartholomew",
+          "given_name": "Sadie L.",
+          "identifiers": [
+            {
+              "identifier": "0000-0002-6180-3603",
+              "scheme": "orcid"
+            }
+          ],
+          "name": "Bartholomew, Sadie L.",
+          "type": "personal"
+        }
+      }
+    ],
+    "description": "<p>This document describes the CF conventions for climate and forecast metadata designed to promote the processing and sharing of files created with the netCDF Application Programmer Interface. The conventions define metadata that provide a definitive description of what the data in each variable represents, and of the spatial and temporal properties of the data. This enables users of data from different sources to decide which quantities are comparable, and facilitates building applications with powerful extraction, regridding, and display capabilities.</p>\n<p>The CF conventions generalize and extend the COARDS conventions. The extensions include metadata that provides a precise definition of each variable via specification of a standard name, describes the vertical locations corresponding to dimensionless vertical coordinate values, and provides the spatial coordinates of non-rectilinear gridded data. Since climate and forecast data are often not simply representative of points in space/time, other extensions provide for the description of coordinate intervals, multidimensional cells and climatological time coordinates, and indicate how a data value is representative of an interval or cell. This standard also relaxes the COARDS constraints on dimension order and specifies methods for reducing the size of datasets.</p>",
+    "publication_date": "2024-05-24",
+    "publisher": "CF Community",
+    "related_identifiers": [
+      {
+        "identifier": "https://github.com/cf-convention/cf-conventions/tree/v1.11.0",
+        "relation_type": {
+          "id": "issupplementto",
+          "title": {
+            "de": "Erg\u00e4nzt",
+            "en": "Is supplement to"
+          }
+        },
+        "resource_type": {
+          "id": "publication-standard",
+          "title": {
+            "de": "Standard",
+            "en": "Standard"
+          }
+        },
+        "scheme": "url"
+      },
+      {
+        "identifier": "https://cfconventions.org/",
+        "relation_type": {
+          "id": "documents",
+          "title": {
+            "de": "Dokumentiert",
+            "en": "Documents"
+          }
+        },
+        "resource_type": {
+          "id": "publication-standard",
+          "title": {
+            "de": "Standard",
+            "en": "Standard"
+          }
+        },
+        "scheme": "url"
+      },
+      {
+        "identifier": "https://cfconventions.org/Data/cf-conventions/cf-conventions-1.11/cf-conventions.html",
+        "relation_type": {
+          "id": "isidenticalto",
+          "title": {
+            "de": "Ist identisch mit",
+            "en": "Is identical to"
+          }
+        },
+        "resource_type": {
+          "id": "publication-standard",
+          "title": {
+            "de": "Standard",
+            "en": "Standard"
+          }
+        },
+        "scheme": "url"
+      }
+    ],
+    "resource_type": {
+      "id": "publication-standard",
+      "title": {
+        "de": "Standard",
+        "en": "Standard"
+      }
+    },
+    "rights": [
+      {
+        "description": {
+          "en": "CC0 waives copyright interest in a work you've created and dedicates it to the world-wide public domain. Use CC0 to opt out of copyright entirely and ensure your work has the widest reach."
+        },
+        "icon": "cc-cc0-icon",
+        "id": "cc0-1.0",
+        "props": {
+          "scheme": "spdx",
+          "url": "https://creativecommons.org/publicdomain/zero/1.0/legalcode"
+        },
+        "title": {
+          "en": "Creative Commons Zero v1.0 Universal"
+        }
+      }
+    ],
+    "title": "NetCDF Climate and Forecast (CF) Metadata Conventions",
+    "version": "1.11"
+  },
+  "parent": {
+    "access": {
+      "owned_by": {
+        "user": "252454"
+      },
+      "settings": {
+        "accept_conditions_text": null,
+        "allow_guest_requests": false,
+        "allow_user_requests": false,
+        "secret_link_expiration": 0
+      }
+    },
+    "communities": {},
+    "id": "11288137",
+    "pids": {
+      "doi": {
+        "client": "datacite",
+        "identifier": "10.5281/zenodo.11288137",
+        "provider": "datacite"
+      }
+    }
+  },
+  "pids": {
+    "doi": {
+      "client": "datacite",
+      "identifier": "10.5281/zenodo.11288138",
+      "provider": "datacite"
+    },
+    "oai": {
+      "identifier": "oai:zenodo.org:11288138",
+      "provider": "oai"
+    }
+  },
+  "revision_id": 16,
+  "stats": {
+    "all_versions": {
+      "data_volume": 1524352.0,
+      "downloads": 2,
+      "unique_downloads": 2,
+      "unique_views": 82,
+      "views": 112
+    },
+    "this_version": {
+      "data_volume": 1524352.0,
+      "downloads": 2,
+      "unique_downloads": 2,
+      "unique_views": 82,
+      "views": 112
+    }
+  },
+  "status": "published",
+  "updated": "2024-05-30T04:43:42.636340+00:00",
+  "versions": {
+    "index": 1,
+    "is_latest": true
+  }
+}
