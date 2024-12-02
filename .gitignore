@@ -2,11 +2,7 @@
 *~
 
 # Do not store generated HTML and PDF files
-cf-conventions.html
-cf-conventions.pdf
 conventions_build/
-conformance.html
-conformance.pdf
 conformance_build/
 build/
 .vscode/

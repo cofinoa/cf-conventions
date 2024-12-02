@@ -66,7 +66,14 @@
         "resource_type": "publication-standard",
         "scheme": "url",
         "identifier": "https://cfconventions.org/Data/cf-conventions/cf-conventions-v1.12/cf-conventions.pdf"
+      },
+      {
+        "relation": "isIdenticalTo",
+        "resource_type": "publication-standard",
+        "scheme": "url",
+        "identifier": "https://cfconventions.org/Data/cf-documents/requirements-recommendations/conformance-1.12.html"
       }
+
     ]
   },
   "files": [
