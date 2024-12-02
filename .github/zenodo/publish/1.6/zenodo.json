@@ -7,8 +7,8 @@
     "communities": [{"identifier": "cfconventions-sandbox"}],
     "upload_type": "publication",
     "publication_type": "standard",
-    "version": "1.1",
-    "publication_date": "2008-01-17",
+    "version": "1.6",
+    "publication_date": "2012-12-05",
     "creators": [
       { "name": "Eaton, Brian", "affiliation": "NCAR" },
       { "name": "Gregory, Jonathan", "affiliation": "University of Reading and UK Met Office Hadley Centre", "orcid": "0000-0003-1296-8644" },
@@ -16,7 +16,12 @@
       { "name": "Taylor, Karl", "affiliation": "PCMDI, LLNL", "orcid": "0000-0002-6491-2135" },
       { "name": "Hankin, Steve", "affiliation": "PMEL, NOAA" },
       { "name": "Caron, John", "affiliation": "UCAR" },
-      { "name": "Signell, Rich", "affiliation": "USGS" }
+      { "name": "Signell, Rich", "affiliation": "USGS" },
+      { "name": "Bentley, Phil", "affiliation": "Hadley Centre, UK Met Office" },
+      { "name": "Rappa, Greg", "affiliation": "MIT" },
+      { "name": "Höck, Heinke", "affiliation": "DKRZ", "orcid": "0000-0002-0131-1404" },
+      { "name": "Pamment, Alison", "affiliation": "BADC", "orcid": "0000-0001-5040-4626"},
+      { "name": "Juckes, Martin", "affiliation": "BADC" }
     ],
     "related_identifiers": [
       {
@@ -26,27 +31,33 @@
         "identifier": "https://cfconventions.org/"
       },
       {
-        "relation": "isIdenticalTo",
+        "relation": "isDerivedFrom",
         "resource_type": "publication-standard",
         "scheme": "url",
-        "identifier": "https://cfconventions.org/Data/cf-conventions/cf-conventions-1.1/build/cf-conventions.html"
+        "identifier": "https://github.com/cf-convention/cf-conventions/tree/v1.6.0"
       },
       {
         "relation": "isIdenticalTo",
         "resource_type": "publication-standard",
         "scheme": "url",
-        "identifier": "https://cfconventions.org/Data/cf-conventions/cf-conventions-1.1/build/cf-conventions.pdf"
+        "identifier": "https://cfconventions.org/Data/cf-conventions/cf-conventions-1.6/build/cf-conventions.html"
       },
       {
         "relation": "isIdenticalTo",
         "resource_type": "publication-standard",
         "scheme": "url",
-        "identifier": "https://cfconventions.org/Data/cf-documents/requirements-recommendations/requirements-recommendations-1.1.html"
+        "identifier": "https://cfconventions.org/Data/cf-conventions/cf-conventions-1.6/build/cf-conventions.pdf"
+      },
+      {
+        "relation": "isIdenticalTo",
+        "resource_type": "publication-standard",
+        "scheme": "url",
+        "identifier": "https://cfconventions.org/Data/cf-documents/requirements-recommendations/requirements-recommendations-1.6.html"
       }
     ]
   },
   "files": [
-    {"filename":                    "cf-conventions.pdf", "size": 314859, "checksum": "md5:1ad6db86ee3544df32f59ffdf2e88693"},
-    {"filename": "requirements-recommendations-1.1.html", "size":  17924, "checksum": "md5:3c7060d639bc11e1d114f634a6216476"}
+    {"filename":                    "cf-conventions.pdf", "size": 526159, "checksum": "md5:9011445cf35254008e65e06a406e4125"},
+    {"filename": "requirements-recommendations-1.6.html", "size":  22836, "checksum": "md5:e1fd3e1f2fac79ff51e610f1cdbc99e9"}
   ]
 }

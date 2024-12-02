@@ -7,15 +7,18 @@
     "communities": [{"identifier": "cfconventions-sandbox"}],
     "upload_type": "publication",
     "publication_type": "standard",
-    "version": "1.1",
-    "publication_date": "2008-01-17",
+    "version": "1.2",
+    "publication_date": "2008-05-04",
     "creators": [
       { "name": "Eaton, Brian", "affiliation": "NCAR" },
       { "name": "Gregory, Jonathan", "affiliation": "University of Reading and UK Met Office Hadley Centre", "orcid": "0000-0003-1296-8644" },
       { "name": "Drach, Bob", "affiliation": "PCMDI, LLNL" },
       { "name": "Taylor, Karl", "affiliation": "PCMDI, LLNL", "orcid": "0000-0002-6491-2135" },
-      { "name": "Hankin, Steve", "affiliation": "PMEL, NOAA" }
-    ], 
+      { "name": "Hankin, Steve", "affiliation": "PMEL, NOAA" },
+      { "name": "Caron, John", "affiliation": "UCAR" },
+      { "name": "Signell, Rich", "affiliation": "USGS" },
+      { "name": "Bentley, Phil", "affiliation": "Hadley Centre, UK Met Office" }
+    ],
     "related_identifiers": [
       {
         "relation": "isDocumentedBy",
@@ -27,24 +30,24 @@
         "relation": "isIdenticalTo",
         "resource_type": "publication-standard",
         "scheme": "url",
-        "identifier": "https://cfconventions.org/Data/cf-conventions/cf-conventions-1.0/build/cf-conventions.html"
+        "identifier": "https://cfconventions.org/Data/cf-conventions/cf-conventions-1.2/build/cf-conventions.html"
       },
       {
         "relation": "isIdenticalTo",
         "resource_type": "publication-standard",
         "scheme": "url",
-        "identifier": "https://cfconventions.org/Data/cf-conventions/cf-conventions-1.0/build/cf-conventions.pdf"
+        "identifier": "https://cfconventions.org/Data/cf-conventions/cf-conventions-1.2/build/cf-conventions.pdf"
       },
       {
         "relation": "isIdenticalTo",
         "resource_type": "publication-standard",
         "scheme": "url",
-        "identifier": "https://cfconventions.org/Data/cf-documents/requirements-recommendations/requirements-recommendations-1.0.html"
+        "identifier": "https://cfconventions.org/Data/cf-documents/requirements-recommendations/requirements-recommendations-1.2.html"
       }
     ]
   },
   "files": [
-    {"filename": "cf-conventions.pdf",                    "size":  311431, "checksum": "md5:27259286ed20c53f5609c6c0335707da"},
-    {"filename": "requirements-recommendations-1.0.html", "size":   18424, "checksum": "md5:1cbb5556d6116f03699a4c18086dfb37"}
+    {"filename":                    "cf-conventions.pdf", "size": 326472, "checksum": "md5:9580a1a03b6a25daf1e013d8f8c2648c"},
+    {"filename": "requirements-recommendations-1.2.html", "size":  18042, "checksum": "md5:7238a1cef65fbac345ba71c9eae94987"}
   ]
 }

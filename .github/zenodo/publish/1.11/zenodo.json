@@ -16,18 +16,18 @@
       { "name": "Taylor, Karl", "affiliation": "PCMDI, LLNL", "orcid": "0000-0002-6491-2135" },
       { "name": "Hankin, Steve", "affiliation": "PMEL, NOAA" },
       { "name": "Blower, Jon", "affiliation": "University of Reading" },
-      { "name": "Caron, John", "affiliation": "Unidata" },
+      { "name": "Caron, John", "affiliation": "UCAR" },
       { "name": "Signell, Rich", "affiliation": "USGS" },
-      { "name": "Bentley, Phil", "affiliation": "UK Met Office" },
+      { "name": "Bentley, Phil", "affiliation": "Hadley Centre, UK Met Office" },
       { "name": "Rappa, Greg", "affiliation": "MIT" },
       { "name": "Höck, Heinke", "affiliation": "DKRZ", "orcid": "0000-0002-0131-1404" },
-      { "name": "Pamment, Alison", "affiliation": "NCAS and CEDA", "orcid": "0000-0001-5040-4626"},
-      { "name": "Juckes, Martin", "affiliation": "NCAS" },
+      { "name": "Pamment, Alison", "affiliation": "BADC", "orcid": "0000-0001-5040-4626"},
+      { "name": "Juckes, Martin", "affiliation": "BADC" },
       { "name": "Raspaud, Martin", "affiliation": "SMHI" },
       { "name": "Horne, Randy", "affiliation": "Excalibur Laboratories Inc" },
       { "name": "Whiteaker, Timothy", "affiliation": "University of Texas" },
       { "name": "Blodgett, David", "affiliation": "USGS" },
-      { "name": "Zender, Charlie", "affiliation": "UC Irvine" },
+      { "name": "Zender, Charlie", "affiliation": "University of California, Irvine" },
       { "name": "Lee, Daniel", "affiliation": "EUMETSAT", "orcid": "0000-0002-1041-232X" },
       { "name": "Hassell, David", "affiliation": "NCAS and University of Reading", "orcid": "0000-0001-5106-7502" },
       { "name": "Snow, Alan D.", "affiliation": "Corteva Agriscience" },
@@ -41,19 +41,19 @@
       { "name": "Bärring, Lars", "affiliation": "SMHI Rossby Centre, Swedish Meteorological and Hydrological Institute", "orcid": "0000-0001-7280-2502" },
       { "name": "Barker, Christopher", "affiliation": "NOAA" },
       { "name": "Bartholomew, Sadie L.", "affiliation": "National Centre for Atmospheric Science and University of Reading", "orcid": "0000-0002-6180-3603" }
-    ], 
+    ],
     "related_identifiers": [
       {
-        "relation": "isSupplementTo",
-        "resource_type": "publication-standard",
-        "scheme": "url",
-        "identifier": "https://github.com/cf-convention/cf-conventions/tree/v1.11.0"
-      },
-      {
-        "relation": "documents",
+        "relation": "isDocumentedBy",
         "resource_type": "publication-standard",
         "scheme": "url",
         "identifier": "https://cfconventions.org/"
+      },
+      {
+        "relation": "isDerivedFrom",
+        "resource_type": "publication-standard",
+        "scheme": "url",
+        "identifier": "https://github.com/cf-convention/cf-conventions/tree/v1.11.0"
       },
       {
         "relation": "isIdenticalTo",
@@ -66,11 +66,17 @@
         "resource_type": "publication-standard",
         "scheme": "url",
         "identifier": "https://cfconventions.org/Data/cf-conventions/cf-conventions-1.11/cf-conventions.pdf"
+      },
+      {
+        "relation": "isIdenticalTo",
+        "resource_type": "publication-standard",
+        "scheme": "url",
+        "identifier": "https://cfconventions.org/Data/cf-documents/requirements-recommendations/conformance-1.11.html"
       }
     ]
   },
   "files": [
-    {"filename": "cf-conventions.pdf", "size":  5979284, "checksum": "md5:24f73fade28dea807df0a6f5131b0384"},
-    {"filename":    "conformance.pdf", "size":   347588, "checksum": "md5:85ec577392275291de07eb78aadddfae"}
+    {"filename": "cf-conventions.pdf", "size": 5979284, "checksum": "md5:24f73fade28dea807df0a6f5131b0384"},
+    {"filename":    "conformance.pdf", "size":  347588, "checksum": "md5:85ec577392275291de07eb78aadddfae"}
   ]
 }

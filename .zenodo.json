@@ -27,7 +27,7 @@
       { "name": "Horne, Randy", "affiliation": "Excalibur Laboratories Inc" },
       { "name": "Whiteaker, Timothy", "affiliation": "University of Texas" },
       { "name": "Blodgett, David", "affiliation": "USGS" },
-      { "name": "Zender, Charlie", "affiliation": "UC Irvine" },
+      { "name": "Zender, Charlie", "affiliation": "University of California, Irvine" },
       { "name": "Lee, Daniel", "affiliation": "EUMETSAT", "orcid": "0000-0002-1041-232X" },
       { "name": "Hassell, David", "affiliation": "NCAS and University of Reading", "orcid": "0000-0001-5106-7502" },
       { "name": "Snow, Alan D.", "affiliation": "Corteva Agriscience" },
@@ -44,16 +44,16 @@
     ], 
     "related_identifiers": [
       {
-        "relation": "isDerivedFrom",
-        "resource_type": "publication-standard",
-        "scheme": "url",
-        "identifier": "https://github.com/cf-convention/cf-conventions/tree/v1.12"
-      },
-      {
         "relation": "isDocumentedBy",
         "resource_type": "publication-standard",
         "scheme": "url",
         "identifier": "https://cfconventions.org/"
+      },
+      {
+        "relation": "isDerivedFrom",
+        "resource_type": "publication-standard",
+        "scheme": "url",
+        "identifier": "https://github.com/cf-convention/cf-conventions/tree/v1.12"
       },
       {
         "relation": "isIdenticalTo",
