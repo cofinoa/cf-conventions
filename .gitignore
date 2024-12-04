@@ -6,3 +6,4 @@ conventions_build/
 conformance_build/
 build/
 .vscode/
+.env
