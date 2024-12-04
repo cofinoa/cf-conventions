@@ -12,7 +12,7 @@ or with the commandline switch `-a final`.
 ifdef::final[]
 :current-version: {version}
 :current-version-as-attribute: {version}
-:doi: 10.5072/zenodo.FFFFFF
+:doi: 10.5281/zenodo.138838
 :doi-text: DOI: link:https://doi.org/{doi}[{doi}]
 endif::[]
 ifndef::final[]
