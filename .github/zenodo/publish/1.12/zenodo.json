@@ -53,31 +53,37 @@
         "relation": "isDerivedFrom",
         "resource_type": "publication-standard",
         "scheme": "url",
-        "identifier": "https://github.com/cf-convention/cf-conventions/tree/v1.12"
+        "identifier": "https://github.com/cf-convention/cf-conventions/tree/v1.12.0"
       },
       {
         "relation": "isIdenticalTo",
         "resource_type": "publication-standard",
         "scheme": "url",
-        "identifier": "https://cfconventions.org/Data/cf-conventions/cf-conventions-v1.12/cf-conventions.html"
+        "identifier": "https://cfconventions.org/Data/cf-conventions/cf-conventions-1.12/cf-conventions.html"
       },
       {
         "relation": "isIdenticalTo",
         "resource_type": "publication-standard",
         "scheme": "url",
-        "identifier": "https://cfconventions.org/Data/cf-conventions/cf-conventions-v1.12/cf-conventions.pdf"
+        "identifier": "https://cfconventions.org/Data/cf-conventions/cf-conventions-1.12/cf-conventions.pdf"
       },
       {
         "relation": "isIdenticalTo",
         "resource_type": "publication-standard",
         "scheme": "url",
         "identifier": "https://cfconventions.org/Data/cf-documents/requirements-recommendations/conformance-1.12.html"
+      },
+      {
+        "relation": "isIdenticalTo",
+        "resource_type": "publication-standard",
+        "scheme": "url",
+        "identifier": "https://cfconventions.org/Data/cf-documents/requirements-recommendations/conformance-1.12.pdf"
       }
 
     ]
   },
   "files": [
-    {"filename": "cf-conventions.pdf", "size": 6136097, "checksum": "md5:3537b2c8bb82aa950d3ef8c0395b3795"},
-    {"filename":    "conformance.pdf", "size":  362748, "checksum": "md5:4fdaa837b0286da621f1a095cc4aef69"}
-    ]
+    {"filename":   "cf-conventions.pdf", "size": 6135749, "checksum": "md5:2763f464f2ac9e5c44c02c5343a3b384"},
+    {"filename": "conformance-1.12.pdf", "size":  362748, "checksum": "md5:97af0bb9601bf67deaf4f7aaad5c75d8"}
+  ]
 }
