@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.23">
-<title>CF Conformance Requirements and Recommendations 1.12 draft</title>
+<meta name="generator" content="Asciidoctor 2.0.20">
+<title>CF Conformance Requirements and Recommendations 1.14 draft</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -140,7 +140,7 @@ p a>code:hover{color:rgba(0,0,0,.9)}
 #content::before{content:none}
 #header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
 #header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
-#header>h1:only-child{border-bottom:1px solid #dddddf;padding-bottom:8px}
+#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
 #header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:flex;flex-flow:row wrap}
 #header .details span:first-child{margin-left:-.125em}
 #header .details span.email a{color:rgba(0,0,0,.85)}
@@ -162,7 +162,6 @@ p a>code:hover{color:rgba(0,0,0,.9)}
 #toctitle{color:#7a2518;font-size:1.2em}
 @media screen and (min-width:768px){#toctitle{font-size:1.375em}
 body.toc2{padding-left:15em;padding-right:0}
-body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
 #toc.toc2{margin-top:0!important;background:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #e7e7e9;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
 #toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
 #toc.toc2>ul{font-size:.9em;margin-bottom:0}
@@ -328,7 +327,7 @@ a.image{text-decoration:none;display:inline-block}
 a.image object{pointer-events:none}
 sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
 sup.footnote a,sup.footnoteref a{text-decoration:none}
-sup.footnote a:active,sup.footnoteref a:active,#footnotes .footnote a:first-of-type:active{text-decoration:underline}
+sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
 #footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
 #footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
 #footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
@@ -439,7 +438,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="cf-conformance-requirements-and-recommendations">CF Conformance Requirements and Recommendations 1.12 draft</h2>
+<h2 id="cf-conformance-requirements-and-recommendations">CF Conformance Requirements and Recommendations 1.14 draft</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -602,7 +601,7 @@ See <a href="https://github.com/ugrid-conventions/ugrid-conventions" class="bare
 <p>The <strong><code>Conventions</code></strong> attribute must be a single text string containing a list of convention names separated by blank space or commas, one of which shall be the full CF string as described below.</p>
 </li>
 <li>
-<p>Files that conform to the CF version 1.12 draft conventions must indicate this by setting the global <strong><code>Conventions</code></strong> attribute to contain the CF string value "CF-1.12-draft".</p>
+<p>Files that conform to the CF version 1.14 draft conventions must indicate this by setting the global <strong><code>Conventions</code></strong> attribute to contain the CF string value "CF-1.14-draft".</p>
 </li>
 </ul>
 </div>
@@ -696,6 +695,102 @@ References can be absolute, relative or with no path, in which case, the variabl
 </div>
 </div>
 <div class="sect2">
+<h3 id="aggregation-variables">2.8 Aggregation Variables</h3>
+<div class="paragraph">
+<p><strong>Requirements:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>An aggregation variable has an <strong><code>aggregated_dimensions</code></strong> attribute whose string value is a blank-separated list of zero or more aggregated dimension names.</p>
+</li>
+<li>
+<p>Each aggregated dimension must name a dimension in the file.</p>
+</li>
+<li>
+<p>An aggregation variable must be a scalar.</p>
+</li>
+<li>
+<p>An aggregation variable must have an <strong><code>aggregated_data</code></strong> attribute whose string value comprises blank-separated elements of the form <em>feature: variable</em>.
+Each <em>variable</em> must be the name of a variable in the file.
+The feature keywords must comprise either all three of <code>map</code>, <code>uris</code>, and <code>identifiers</code>; or else both of <code>map</code> and <code>unique_values</code>.</p>
+</li>
+<li>
+<p>A <code>uris</code> variable must have a string data type.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>uris</code> variable must have the same number of dimensions as there are aggregated dimensions.</p>
+</li>
+<li>
+<p>The size of each dimension must be the equal to number of valid values in the corresponding row of the <code>map</code> variable.</p>
+</li>
+<li>
+<p>The variable must have no missing values.</p>
+</li>
+<li>
+<p>A data value of a <code>uris</code> variable must be either an absolute URI or else a relative-path URI reference.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>An <code>identifiers</code> variable must be either a scalar, or else have the same dimensions in the same order as the <code>uris</code> variable.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The variable must have no missing values.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The <code>unique_values</code> variable must have the same number of dimensions as there are aggregated dimensions.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The size of each dimension must be equal to the number of valid values in the corresponding row of the <code>map</code> variable.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The <code>map</code> variable must have an integer data type.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If there are zero aggregated dimensions then the <code>map</code> variable must a be scalar and contain the value <code>1</code>.</p>
+</li>
+<li>
+<p>If there are one or more aggregated dimensions then the <code>map</code> variable must be two-dimensional.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The size of the slower-varying dimension (i.e. the first dimension in CDL order, representing rows) must be the number of aggregated dimensions.</p>
+</li>
+<li>
+<p>The sum of the valid values in a row must equal the size of the corresponding aggregated dimension.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Recommendations:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The following kinds of variable should not be aggregation variables: grid mapping variables, domain variables, mesh topology variables, geometry container variables, interpolation variables, and quantization variables.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
 <h3 id="description-of-the-data">3 Description of the Data</h3>
 
 </div>
@@ -707,7 +802,7 @@ References can be absolute, relative or with no path, in which case, the variabl
 <div class="ulist">
 <ul>
 <li>
-<p>The <strong><code>units</code></strong> attribute is required for all variables that represent dimensional quantities (except for boundary variables defined in <a href="https://cfconventions.org/cf-conventions/cf-conventions.html#cell-boundaries">section 7.1</a> and climatology variables defined in <a href="https://cfconventions.org/cf-conventions/cf-conventions.html#climatological-statistics">section 7.4</a>).</p>
+<p>The <strong><code>units</code></strong> attribute is required for all variables that represent dimensional quantities (except for boundary variables defined in <a href="https://cfconventions.org/cf-conventions/cf-conventions.html#cell-boundaries">section 7.1</a> and climatology boundary variables defined in <a href="https://cfconventions.org/cf-conventions/cf-conventions.html#climatological-statistics">section 7.4</a>).</p>
 </li>
 <li>
 <p>The type of the <strong><code>units</code></strong> attribute is a string that must be recognizable by the UDUNITS package.
@@ -915,7 +1010,7 @@ The values of <strong><code>var</code></strong> must be variables that exist in 
 </div>
 </div>
 <div class="sect2">
-<h3 id="time-coordinate">4.4.1 Time Coordinate Units</h3>
+<h3 id="time-coordinate">4.4.2 Time Coordinate Units</h3>
 <div class="paragraph">
 <p><strong>Requirements:</strong></p>
 </div>
@@ -924,24 +1019,43 @@ The values of <strong><code>var</code></strong> must be variables that exist in 
 <li>
 <p>The time <strong><code>units</code></strong> of a time coordinate variable must contain a reference datetime.</p>
 </li>
+<li>
+<p>A non-zero time zone offset must not appear in the reference datetime in the <strong><code>utc</code></strong> and <strong><code>tai</code></strong> calendars.</p>
+</li>
+<li>
+<p>The reference datetime must be written in the correct format.
+In particular, it must include the date, and the time zone offset must not be included unless the time is included.</p>
+</li>
 </ul>
 </div>
 <div class="paragraph">
 <p><strong>Recommendations:</strong></p>
 </div>
+<div class="paragraph">
+<p>In the first three recommendations, when we refer to a UDUNITS unit of time e.g. <strong><code>year</code></strong>, we mean the string given or any which is equivalent to it in UDUNITS e.g. <strong><code>yr</code></strong>.</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>Units of <strong><code>year</code></strong> and <strong><code>month</code></strong> and any equivalent units should be used with caution.</p>
+<p>Units of <strong><code>year</code></strong> and <strong><code>month</code></strong> should not be used in any calendar.</p>
+</li>
+<li>
+<p>Units of <strong><code>day</code></strong>, <strong><code>hour</code></strong> and <strong><code>minute</code></strong> should not be used in the <strong><code>utc</code></strong> calendar. In that calendar, the only recommended unit is <strong><code>second</code></strong>.</p>
+</li>
+<li>
+<p>The decimal prefixes of Table 3.1 should not be used with any unit of time apart from <strong><code>second</code></strong>.</p>
 </li>
 <li>
 <p>UDUNITS permits a number of alternatives to the word <strong><code>since</code></strong> in the units of time coordinates. All the alternatives have exactly the same meaning in UDUNITS. For compatibility with other software, CF strongly recommends that <strong><code>since</code></strong> should be used.</p>
+</li>
+<li>
+<p>A non-zero time zone offset should not be specified in the reference datetime.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="calendar">4.4.2 Calendar</h3>
+<h3 id="calendar">4.4.3 Calendar</h3>
 <div class="paragraph">
 <p><strong>Requirements:</strong></p>
 </div>
@@ -954,7 +1068,11 @@ The values of <strong><code>var</code></strong> must be variables that exist in 
 <p>If present, the value of the <strong><code>calendar</code></strong> attribute must be one of the standardized values (case insensitive) detailed in this section, unless the <strong><code>month_length</code></strong> attribute is present, in which case the <strong><code>calendar</code></strong> attribute must <em>not</em> take one of the standardized values.</p>
 </li>
 <li>
-<p>The reference datetime of a time coordinate variable must be a legal datetime in the specified calendar.</p>
+<p>Datetimes before 1972-01-01 0:0:0 and after the current instant (i.e. any time in the future when the data is written) are invalid in the <strong><code>utc</code></strong> calendar, datetimes before 1958-01-01 0:0:0 are invalid in the <strong><code>tai</code></strong> calendar, datetimes in negative years are invalid in the <strong><code>standard</code></strong> and <strong><code>julian</code></strong> calendars, and datetimes in the range from (and including) 1582-10-5 0:0:0 until (but excluding) 1582-10-15 0:0:0 are invalid in the <strong><code>standard</code></strong> calendar.
+Datetimes which are invalid in the specified calendar must not be encoded as time coordinates.</p>
+</li>
+<li>
+<p>The reference datetime of a time coordinate variable must be a valid datetime in the specified calendar.</p>
 </li>
 </ul>
 </div>
@@ -973,42 +1091,17 @@ The values of <strong><code>var</code></strong> must be variables that exist in 
 <p>The value <strong><code>standard</code></strong> should be used instead of <strong><code>gregorian</code></strong> in the <strong><code>calendar</code></strong> attribute.</p>
 </li>
 <li>
-<p>The time coordinate should not cross the date 1582-10-15 when the default mixed Gregorian/Julian calendar is in use.</p>
+<p>In the <strong><code>standard</code></strong> calendar, a reference datetime before 1582-10-5 0:0:0 should not be used for a time coordinate representing 1582-10-15 0:0:0 or a later datetime, and a reference datetime of 1582-10-15 0:0:0 or later should not be used for a time coordinate representing a datetime earlier than 1582-10-5 0:0:0.</p>
+</li>
+<li>
+<p>A datetime during a leap second (i.e. with a value for seconds that equals or exceeds 60) should not be used as the reference datetime of a time coordinate variable if the <strong><code>calendar</code></strong> is <strong><code>utc</code></strong>.
+(In other calendars, leap seconds must not be used because they are not valid datetimes.)</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="leap-seconds">4.4.3 Leap Seconds</h3>
-<div class="paragraph">
-<p><strong>Requirements:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The reference datetime in time <strong><code>units</code></strong> is not allowed to contain seconds equal to or greater than 60, except for valid leap seconds if the <strong><code>calendar</code></strong> is <strong><code>utc</code></strong>.</p>
-</li>
-<li>
-<p>A time coordinate variable must not have a <strong><code>units_metadata</code></strong> attribute if it has a <strong><code>calendar</code></strong> attribute with a value <em>other than</em> one of the following values: <code>standard</code>, <code>gregorian</code> (deprecated), <code>proleptic_gregorian</code>, <code>julian</code>.</p>
-</li>
-<li>
-<p>If a time coordinate variable has a <strong><code>units_metadata</code></strong> attribute then it must have one of these values: <code>leap_seconds: none</code>, <code>leap_seconds: utc</code>, or <code>leap_seconds: unknown</code>.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>Recommendations:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>A time coordinate variable should have a <strong><code>units_metadata</code></strong>  attribute if it has no <strong><code>calendar</code></strong> attribute, or if it has a <strong><code>calendar</code></strong> attribute with one of the following values: <code>standard</code>, <code>gregorian</code> (deprecated), <code>proleptic_gregorian</code>, <code>julian</code>.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="explicitly-defined-calendar">4.4.5 Explicitly Defined Calendar</h3>
+<h3 id="explicitly-defined-calendar">4.4.4 Explicitly Defined Calendar</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1114,7 +1207,7 @@ If it is an auxiliary coordinate variable, it must be listed in the coordinates 
 The legal values for the <strong><code>grid_mapping_name</code></strong> attribute are contained in Appendix F.</p>
 </li>
 <li>
-<p>The data types of the attributes of the grid mapping variable must be specified in Table 1 of Appendix F.<br></p>
+<p>The data types of the attributes of the grid mapping variable must be as specified in Table F.1 of Appendix F.<br></p>
 </li>
 <li>
 <p>If present, the <strong><code>crs_wkt</code></strong> attribute must be a text string conforming to the CRS WKT specification described in reference [OGC_CTS].</p>
@@ -1124,6 +1217,18 @@ The legal values for the <strong><code>grid_mapping_name</code></strong> attribu
 </li>
 <li>
 <p>If <strong><code>projected_crs_name</code></strong> is defined then <strong><code>geographic_crs_name</code></strong> must be also.</p>
+</li>
+<li>
+<p>If the value of the <strong><code>indexing_scheme</code></strong> attribute is <strong><code>nested</code></strong> or <strong><code>ring</code></strong>, then the <strong><code>refinement_level</code></strong> attribute must also be present.</p>
+</li>
+<li>
+<p>If the value of the <strong><code>indexing_scheme</code></strong> attribute is <strong><code>nuniq</code></strong> or <strong><code>zuniq</code></strong>, then the <strong><code>refinement_level</code></strong> attribute must not be present.</p>
+</li>
+<li>
+<p>The value of the <strong><code>refinement_level</code></strong> attribute must be an integer in the range 0-29.</p>
+</li>
+<li>
+<p>A variable with standard name <strong><code>healpix_index</code></strong> must have an integer data type and all values must be non-negative.</p>
 </li>
 </ul>
 </div>
@@ -1137,6 +1242,9 @@ The legal values for the <strong><code>grid_mapping_name</code></strong> attribu
 </li>
 <li>
 <p>Deprecated attributes for the <strong><code>grid_mapping_name</code></strong> are: <strong><code>scale_factor_at_projection_origin</code></strong> for <strong><code>grid_mapping_name = lambert_cylindrical_equal_area</code></strong> only, where <strong><code>standard_parallel</code></strong> should instead be used; and <strong><code>straight_vertical_longitude_from_pole</code></strong> for <strong><code>grid_mapping_name = polar_stereographic</code></strong> only, where <strong><code>longitude_of_projection_origin</code></strong> should instead be used.</p>
+</li>
+<li>
+<p>An auxiliary coordinate variable with standard name <strong><code>healpix_index</code></strong>, of size greater than one, all of whose values are distinct, should be a coordinate variable instead (with values ordered monotonically).</p>
 </li>
 </ul>
 </div>
@@ -1340,22 +1448,75 @@ The <em>value</em> must be a valid number and the <em>unit</em> a string that is
 The specified variable must exist in the file.</p>
 </li>
 <li>
-<p>A climatology variable must have the same dimension as its associated time coordinate variable, and have a trailing dimension (CDL order) of size 2.</p>
+<p>A climatology boundary variable must have the same dimension as its associated time coordinate variable, and have a trailing dimension (CDL order) of size 2.</p>
 </li>
 <li>
-<p>A climatology variable must be a numeric data type.</p>
+<p>A climatology boundary variable must be a numeric data type.</p>
 </li>
 <li>
-<p>If a climatology variable has <strong><code>units</code></strong>, <strong><code>standard_name</code></strong>, or <strong><code>calendar</code></strong> attributes, they must agree with those of its associated variable.</p>
+<p>If a climatology boundary variable has <strong><code>units</code></strong>, <strong><code>standard_name</code></strong>, or <strong><code>calendar</code></strong> attributes, they must agree with those of its associated variable.</p>
 </li>
 <li>
-<p>A climatology variable must not have <strong><code>_FillValue</code></strong> or <strong><code>missing_value</code></strong> attributes.</p>
+<p>A climatology boundary variable must not have <strong><code>_FillValue</code></strong> or <strong><code>missing_value</code></strong> attributes.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="geometries">7.5 Geometries</h3>
+<h3 id="_7_5_anomaly_data">7.5 Anomaly data</h3>
+<div class="paragraph">
+<p><strong>Requirements:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In a <strong><code>cell_methods</code></strong> entry of the form <em>name</em><strong><code>:</code></strong> [<em>name</em><strong><code>:</code></strong> &#8230;&#8203;] <strong><code>anomaly_wrt</code></strong> <em>norm</em>, the word <em>norm</em> must be the name of a variable that is present in the file, and is named by the <strong><code>ancillary_variables</code></strong> attribute of the data variable (hence we hereafter refer to it as the "norm ancillary variable").</p>
+</li>
+<li>
+<p>Each of the coordinate variables and scalar coordinate variables identified by the <em>name</em>s in the <strong><code>anomaly_wrt</code></strong> entry of <strong><code>cell_methods</code></strong> (we refer to these variables hereafter as "anomaly coordinate variables") must have a <strong><code>standard_name</code></strong> attribute.</p>
+</li>
+<li>
+<p>If either the data variable or the norm ancillary variable has a <strong><code>standard_name</code></strong> attribute, its value must not end in <strong><code>_anomaly</code></strong>, and if they both have <strong><code>standard_name</code></strong> attributes, they must have the same value.</p>
+</li>
+<li>
+<p>The anomaly coordinate variables must not be coordinate variables or scalar coordinate variables of the norm ancillary variable.</p>
+</li>
+<li>
+<p>The coordinate variables and scalar coordinate variables of the norm ancillary variable must satisfy one of the following conditions:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The norm ancillary variable has all the coordinate variables (and their dimensions) and the scalar coordinate variables of the data variable, except for the anomaly coordinate variables.</p>
+</li>
+<li>
+<p>The norm ancillary variable has none of the coordinate variables or scalar coordinate variables of the data variable.</p>
+</li>
+<li>
+<p>The norm ancillary variable has no scalar coordinate variables, and its sole dimension is the dimension of an anomaly coordinate variable of time.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>In cases (1) and (2), for each of the anomaly coordinate variables, the norm ancillary variable must have either a coordinate variable with a size-one dimension, or a scalar coordinate variable, with the same <strong><code>standard_name</code></strong> attribute as the anomaly coordinate variable, and each of these variables must have either a <strong><code>bounds</code></strong> or a <strong><code>climatology</code></strong> attribute. (We hereafter refer to these variables as "norm coordinate variables.)</p>
+</li>
+<li>
+<p>In cases (1) and (2), the norm ancillary variable must have a <strong><code>cell_methods</code></strong> attribute with an entry that refers to all the norm coordinate variables, or more than one entry if they contain <strong><code>within</code></strong> and <strong><code>over</code></strong> keywords.</p>
+</li>
+<li>
+<p>In case (3), the norm ancillary variable must have a <strong><code>cell_methods</code></strong> attribute comprising entries containing <strong><code>within</code></strong> and <strong><code>over</code></strong> keywords and referring to its sole dimension.</p>
+</li>
+<li>
+<p>In cases (2) and (3), <strong><code>cell_methods</strong></code> must have no entries other that the ones described in the previous two points.</p>
+</li>
+<li>
+<p>In case (3), the norm ancillary variable must have an auxiliary coordinate variable of integer type with a <strong><code>select</code></strong> attribute naming a time coordinate variable that has a <strong><code>climatology</code></strong> attribute. The auxiliary coordinate values must be non-negative and less than the dimension named by the <strong><code>select</code></strong> attribute.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="geometries">7.6 Geometries</h3>
 <div class="paragraph">
 <p><strong>Requirements:</strong></p>
 </div>
@@ -1626,7 +1787,7 @@ If the optional formula term <code><strong>nsigma</strong></code> is supplied, i
 <div id="footer">
 <div id="footer-text">
 Version v1.12.0-rc7-24-gb724218<br>
-Last updated 2024-12-15 10:44:37 UTC
+Last updated 2025-12-23 09:26:37 UTC
 </div>
 </div>
 </body>
