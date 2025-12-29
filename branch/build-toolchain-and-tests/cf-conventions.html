@@ -434,7 +434,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 </head>
-<body class="article">
+<body class="book">
 <div id="header">
 <h1>NetCDF Climate and Forecast (CF) Metadata Conventions</h1>
 <div class="details">
@@ -476,7 +476,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <span id="author36" class="author">Seth&#160;McGinnis</span><br>
 <span id="author37" class="author">Patrick&#160;Van&#160;Laake</span><br>
 <span id="revnumber">version v1.12.0-rc7-24-gb724218,</span>
-<span id="revdate">28&#160;December,&#160;2025&#160;14:37:09Z</span>
+<span id="revdate">29&#160;December,&#160;2025&#160;20:51:53Z</span>
 <br><span id="revremark">build-toolchain-and-tests</span>
 </div>
 </div>
@@ -499,7 +499,350 @@ This document is dedicated to the public domain following the <a href="https://c
 Eaton, B., Gregory, J., Drach, B., Taylor, K., Hankin, S. et al. (2025). NetCDF Climate and Forecast (CF) Metadata Conventions (1.14-draft). CF Community. <a href="https://doi.org/10.5281/zenodo.FFFFFF" class="bare">https://doi.org/10.5281/zenodo.FFFFFF</a></p>
 </div>
 <hr>
-<!-- toc disabled -->
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_about_the_authors">About the authors</a></li>
+<li><a href="#_abstract">Abstract</a></li>
+<li><a href="#_introduction">1. Introduction</a>
+<ul class="sectlevel2">
+<li><a href="#_goals">1.1. Goals</a></li>
+<li><a href="#design">1.2. Principles for design</a></li>
+<li><a href="#terminology">1.3. Terminology</a></li>
+<li><a href="#overview">1.4. Overview</a></li>
+<li><a href="#coards-relationship">1.5. Relationship to the COARDS Conventions</a></li>
+<li><a href="#ugrid-conventions">1.6. UGRID Conventions</a></li>
+</ul>
+</li>
+<li><a href="#_netcdf_files_and_components">2. NetCDF Files and Components</a>
+<ul class="sectlevel2">
+<li><a href="#_filename">2.1. Filename</a></li>
+<li><a href="#_data_types">2.2. Data Types</a></li>
+<li><a href="#_naming_conventions">2.3. Naming Conventions</a></li>
+<li><a href="#dimensions">2.4. Dimensions</a></li>
+<li><a href="#variables">2.5. Variables</a>
+<ul class="sectlevel3">
+<li><a href="#missing-data">2.5.1. Missing data, valid and actual range of data</a></li>
+</ul>
+</li>
+<li><a href="#_attributes">2.6. Attributes</a>
+<ul class="sectlevel3">
+<li><a href="#identification-of-conventions">2.6.1. Identification of Conventions</a></li>
+<li><a href="#description-of-file-contents">2.6.2. Description of file contents</a></li>
+<li><a href="#external-variables">2.6.3. External Variables</a></li>
+</ul>
+</li>
+<li><a href="#groups">2.7. Groups</a>
+<ul class="sectlevel3">
+<li><a href="#_scope">2.7.1. Scope</a></li>
+<li><a href="#_application_of_attributes">2.7.2. Application of attributes</a></li>
+</ul>
+</li>
+<li><a href="#aggregation-variables">2.8. Aggregation Variables</a>
+<ul class="sectlevel3">
+<li><a href="#aggregated-dimensions-and-data">2.8.1. Aggregated Dimensions and Data</a></li>
+<li><a href="#fragment-interpretation">2.8.2. Fragment Interpretation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_description_of_the_data">3. Description of the Data</a>
+<ul class="sectlevel2">
+<li><a href="#units">3.1. Units</a>
+<ul class="sectlevel3">
+<li><a href="#dimensionless-units">3.1.1. Dimensionless units</a></li>
+<li><a href="#temperature-units">3.1.2. Temperature units</a></li>
+<li><a href="#units-multiples">3.1.3. Scale factors and offsets</a></li>
+</ul>
+</li>
+<li><a href="#long-name">3.2. Long Name</a></li>
+<li><a href="#standard-name">3.3. Standard Name</a></li>
+<li><a href="#ancillary-data">3.4. Ancillary Data</a></li>
+<li><a href="#flags">3.5. Flags</a></li>
+</ul>
+</li>
+<li><a href="#coordinate-types">4. Coordinate Types</a>
+<ul class="sectlevel2">
+<li><a href="#latitude-coordinate">4.1. Latitude Coordinate</a></li>
+<li><a href="#longitude-coordinate">4.2. Longitude Coordinate</a></li>
+<li><a href="#vertical-coordinate">4.3. Vertical (Height or Depth) Coordinate</a>
+<ul class="sectlevel3">
+<li><a href="#_dimensional_vertical_coordinate">4.3.1. Dimensional Vertical Coordinate</a></li>
+<li><a href="#dimensionless-vertical-coordinate">4.3.2. Dimensionless Vertical Coordinate</a></li>
+<li><a href="#parametric-vertical-coordinate">4.3.3. Parametric Vertical Coordinate</a></li>
+</ul>
+</li>
+<li><a href="#time-coordinate">4.4. Time Coordinate</a>
+<ul class="sectlevel3">
+<li><a href="#time-coordinate-variables">4.4.1. Time Coordinate Variables</a></li>
+<li><a href="#time-coordinate-units">4.4.2. Time Coordinate Units</a></li>
+<li><a href="#calendar">4.4.3. Calendar</a></li>
+<li><a href="#none-calendar">4.4.4. Time Coordinates with no Annual Cycle</a></li>
+<li><a href="#explicit-calendar">4.4.5. Explicitly Defined Calendar</a></li>
+</ul>
+</li>
+<li><a href="#discrete-axis">4.5. Discrete Axis</a></li>
+</ul>
+</li>
+<li><a href="#coordinate-system">5. Coordinate Systems and Domain</a>
+<ul class="sectlevel2">
+<li><a href="#_independent_latitude_longitude_vertical_and_time_axes">5.1. Independent Latitude, Longitude, Vertical, and Time Axes</a></li>
+<li><a href="#_two_dimensional_latitude_longitude_coordinate_variables">5.2. Two-Dimensional Latitude, Longitude, Coordinate Variables</a></li>
+<li><a href="#reduced-horizontal-grid">5.3. Reduced Horizontal Grid</a></li>
+<li><a href="#_timeseries_of_station_data">5.4. Timeseries of Station Data</a></li>
+<li><a href="#_trajectories">5.5. Trajectories</a></li>
+<li><a href="#grid-mappings-and-projections">5.6. Horizontal Coordinate Reference Systems, Grid Mappings, and Projections</a>
+<ul class="sectlevel3">
+<li><a href="#use-of-the-crs-well-known-text-format">5.6.1. Use of the CRS Well-known Text Format</a></li>
+</ul>
+</li>
+<li><a href="#scalar-coordinate-variables">5.7. Scalar Coordinate Variables</a></li>
+<li><a href="#domain-variables">5.8. Domain Variables</a></li>
+<li><a href="#mesh-topology-variables">5.9. Mesh Topology Variables</a></li>
+</ul>
+</li>
+<li><a href="#_labels_and_alternative_coordinates">6. Labels and Alternative Coordinates</a>
+<ul class="sectlevel2">
+<li><a href="#labels">6.1. Labels</a>
+<ul class="sectlevel3">
+<li><a href="#geographic-regions">6.1.1. Geographic Regions</a></li>
+<li><a href="#taxon-names-and-identifiers">6.1.2. Taxon Names and Identifiers</a></li>
+</ul>
+</li>
+<li><a href="#alternative-coordinates">6.2. Alternative Coordinates</a></li>
+</ul>
+</li>
+<li><a href="#_data_representative_of_cells">7. Data Representative of Cells</a>
+<ul class="sectlevel2">
+<li><a href="#cell-boundaries">7.1. Cell Boundaries</a>
+<ul class="sectlevel3">
+<li><a href="#bounds-one-d">7.1.1. Bounds for one-dimensional coordinate variables</a></li>
+<li><a href="#bounds-lat-lon">7.1.2. Bounds for horizontal coordinate variables with four-sided cells</a></li>
+<li><a href="#bounds-two-d">7.1.3. Bounds for coordinate variables with p-sided cells in two spatial dimensions</a></li>
+<li><a href="#boundaries-and-formula-terms">7.1.4. Boundaries and Formula Terms</a></li>
+</ul>
+</li>
+<li><a href="#cell-measures">7.2. Cell Measures</a></li>
+<li><a href="#cell-methods">7.3. Cell Methods</a>
+<ul class="sectlevel3">
+<li><a href="#statistics-more-than-one-axis">7.3.1. Statistics for more than one axis</a></li>
+<li><a href="#recording-spacing-original-data">7.3.2. Recording the spacing of the original data and other information</a></li>
+<li><a href="#statistics-applying-portions">7.3.3. Statistics applying to portions of cells</a></li>
+<li><a href="#cell-methods-no-coordinates">7.3.4. Cell methods when there are no coordinates</a></li>
+</ul>
+</li>
+<li><a href="#climatological-statistics">7.4. Climatological Statistics</a></li>
+<li><a href="#anomalies">7.5. Anomaly data</a>
+<ul class="sectlevel3">
+<li><a href="#anomalies-norm-data">7.5.1. Anomalies with respect to a norm data variable</a></li>
+<li><a href="#anomalies-norm-metadata">7.5.2. Anomalies with respect to a norm metadata variable</a></li>
+<li><a href="#temporal-anomalies">7.5.3. Temporal anomalies using anomaly standard names</a></li>
+</ul>
+</li>
+<li><a href="#geometries">7.6. Geometries</a></li>
+</ul>
+</li>
+<li><a href="#reduction-of-dataset-size">8. Reduction of Dataset Size</a>
+<ul class="sectlevel2">
+<li><a href="#packed-data">8.1. Packed Data</a></li>
+<li><a href="#compression-by-gathering">8.2. Lossless Compression by Gathering</a></li>
+<li><a href="#compression-by-coordinate-subsampling">8.3. Lossy Compression by Coordinate Subsampling</a>
+<ul class="sectlevel3">
+<li><a href="#compression-by-coordinate-subsampling-tie-points-and-interpolation-subareas">8.3.1. Tie Points and Interpolation Subareas</a></li>
+<li><a href="#compression-by-coordinate-subsampling-coordinate-interpolation-attribute">8.3.2. Coordinate Interpolation Attribute</a></li>
+<li><a href="#compression-by-coordinate-subsampling-interpolation-variable">8.3.3. Interpolation Variable</a></li>
+<li><a href="#compression-by-coordinate-subsampling-dimensions">8.3.4. Subsampled, Interpolated and Non-Interpolated Dimensions</a></li>
+<li><a href="#compression-by-coordinate-subsampling-tie-point-mapping-attribute">8.3.5. Tie Point Mapping Attribute</a></li>
+<li><a href="#compression-by-coordinate-subsampling-tie-point-dimension-mapping">8.3.6. Tie Point Dimension Mapping</a></li>
+<li><a href="#compression-by-coordinate-subsampling-tie-point-index-mapping">8.3.7. Tie Point Index Mapping</a></li>
+<li><a href="#compression-by-coordinate-subsampling-interpolation-parameters">8.3.8. Interpolation Parameters</a></li>
+<li><a href="#compression-by-coordinate-subsampling-interpolation-of-cell-boundaries">8.3.9. Interpolation of Cell Boundaries</a></li>
+<li><a href="#compression-by-coordinate-subsampling-interpolation-method-implementation">8.3.10. Interpolation Method Implementation</a></li>
+</ul>
+</li>
+<li><a href="#lossy-compression-via-quantization">8.4. Lossy Compression via Quantization</a>
+<ul class="sectlevel3">
+<li><a href="#quantization-variables">8.4.1. Quantization variables</a></li>
+<li><a href="#per-variable-quantization-attributes">8.4.2. Per-variable quantization attributes</a></li>
+<li><a href="#quantization-algorithms-description">8.4.3. Description of quantization algorithms</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#discrete-sampling-geometries">9. Discrete Sampling Geometries</a>
+<ul class="sectlevel2">
+<li><a href="#_features_and_feature_types">9.1. Features and feature types</a></li>
+<li><a href="#collections-instances-elements">9.2. Collections, instances and elements</a></li>
+<li><a href="#representations-features">9.3. Representations of collections of features in data variables</a>
+<ul class="sectlevel3">
+<li><a href="#orthogonal-multidimensional">9.3.1. Orthogonal multidimensional array representation</a></li>
+<li><a href="#incomplete-multidimensional">9.3.2. Incomplete multidimensional array representation</a></li>
+<li><a href="#contiguous-ragged">9.3.3. Contiguous ragged array representation</a></li>
+<li><a href="#indexed-ragged">9.3.4. Indexed ragged array representation</a></li>
+</ul>
+</li>
+<li><a href="#featureType">9.4. The featureType  attribute</a></li>
+<li><a href="#coordinates-metadata">9.5. Coordinates and metadata</a></li>
+<li><a href="#ch9-missing-data">9.6. Missing Data</a></li>
+</ul>
+</li>
+<li><a href="#attribute-appendix">Appendix A: Attributes</a></li>
+<li><a href="#standard-name-table-format">Appendix B: Standard Name Table Format</a></li>
+<li><a href="#standard-name-modifiers">Appendix C: Standard Name Modifiers</a></li>
+<li><a href="#parametric-v-coord">Appendix D: Parametric Vertical Coordinates</a>
+<ul class="sectlevel2">
+<li><a href="#atmosphere-natural-log-pressure-coordinate">Atmosphere natural log pressure coordinate</a></li>
+<li><a href="#_atmosphere_sigma_coordinate">Atmosphere sigma coordinate</a></li>
+<li><a href="#_atmosphere_hybrid_sigma_pressure_coordinate">Atmosphere hybrid sigma pressure coordinate</a></li>
+<li><a href="#atmosphere-hybrid-height-coordinate">Atmosphere hybrid height coordinate</a></li>
+<li><a href="#_atmosphere_smooth_level_vertical_sleve_coordinate">Atmosphere smooth level vertical (SLEVE) coordinate</a></li>
+<li><a href="#_ocean_sigma_coordinate">Ocean sigma coordinate</a></li>
+<li><a href="#_ocean_s_coordinate">Ocean s-coordinate</a></li>
+<li><a href="#_ocean_s_coordinate_generic_form_1">Ocean s-coordinate, generic form 1</a></li>
+<li><a href="#_ocean_s_coordinate_generic_form_2">Ocean s-coordinate, generic form 2</a></li>
+<li><a href="#_ocean_sigma_over_z_coordinate">Ocean sigma over z coordinate</a></li>
+<li><a href="#_ocean_double_sigma_coordinate">Ocean double sigma coordinate</a></li>
+</ul>
+</li>
+<li><a href="#appendix-cell-methods">Appendix E: Cell Methods</a></li>
+<li><a href="#appendix-grid-mappings">Appendix F: Grid Mappings</a>
+<ul class="sectlevel2">
+<li><a href="#_albers_equal_area">Albers Equal Area</a></li>
+<li><a href="#azimuthal-equidistant">Azimuthal equidistant</a></li>
+<li><a href="#_geostationary_projection">Geostationary projection</a></li>
+<li><a href="#healpix">HEALPix</a></li>
+<li><a href="#lambert-azimuthal-equal-area">Lambert azimuthal equal area</a></li>
+<li><a href="#_lambert_conformal">Lambert conformal</a></li>
+<li><a href="#_lambert_cylindrical_equal_area">Lambert Cylindrical Equal Area</a></li>
+<li><a href="#_latitude_longitude">Latitude-Longitude</a></li>
+<li><a href="#_mercator">Mercator</a></li>
+<li><a href="#_oblique_mercator">Oblique Mercator</a></li>
+<li><a href="#_orthographic">Orthographic</a></li>
+<li><a href="#polar-stereographic">Polar stereographic</a></li>
+<li><a href="#_rotated_pole">Rotated pole</a></li>
+<li><a href="#_sinusoidal">Sinusoidal</a></li>
+<li><a href="#_stereographic">Stereographic</a></li>
+<li><a href="#_transverse_mercator">Transverse Mercator</a></li>
+<li><a href="#vertical-perspective">Vertical perspective</a></li>
+</ul>
+</li>
+<li><a href="#_revision_history">Appendix G: Revision History</a></li>
+<li><a href="#appendix-examples-discrete-geometries">Appendix H: Annotated Examples of Discrete Geometries</a>
+<ul class="sectlevel2">
+<li><a href="#point-data">H.1. Point Data</a></li>
+<li><a href="#time-series-data">H.2. Time Series Data</a>
+<ul class="sectlevel3">
+<li><a href="#_orthogonal_multidimensional_array_representation_of_time_series">H.2.1. Orthogonal multidimensional array representation of time series</a></li>
+<li><a href="#_incomplete_multidimensional_array_representation_of_time_series">H.2.2. Incomplete multidimensional array representation of time series</a></li>
+<li><a href="#_single_time_series_including_deviations_from_a_nominal_fixed_spatial_location">H.2.3. Single time series, including deviations from a nominal fixed spatial location</a></li>
+<li><a href="#_contiguous_ragged_array_representation_of_time_series">H.2.4. Contiguous ragged array representation of time series</a></li>
+<li><a href="#_indexed_ragged_array_representation_of_time_series">H.2.5. Indexed ragged array representation of time series</a></li>
+</ul>
+</li>
+<li><a href="#profile-data">H.3. Profile Data</a>
+<ul class="sectlevel3">
+<li><a href="#_orthogonal_multidimensional_array_representation_of_profiles">H.3.1. Orthogonal multidimensional array representation of profiles</a></li>
+<li><a href="#_incomplete_multidimensional_array_representation_of_profiles">H.3.2. Incomplete multidimensional array representation of profiles</a></li>
+<li><a href="#_single_profile">H.3.3. Single profile</a></li>
+<li><a href="#_contiguous_ragged_array_representation_of_profiles">H.3.4. Contiguous ragged array representation of profiles</a></li>
+<li><a href="#_indexed_ragged_array_representation_of_profiles">H.3.5. Indexed ragged array representation of profiles</a></li>
+</ul>
+</li>
+<li><a href="#trajectory-data">H.4. Trajectory Data</a>
+<ul class="sectlevel3">
+<li><a href="#_multidimensional_array_representation_of_trajectories">H.4.1. Multidimensional array representation of trajectories</a></li>
+<li><a href="#_single_trajectory">H.4.2. Single trajectory</a></li>
+<li><a href="#_contiguous_ragged_array_representation_of_trajectories">H.4.3. Contiguous ragged array representation of trajectories</a></li>
+<li><a href="#_indexed_ragged_array_representation_of_trajectories">H.4.4. Indexed ragged array representation of trajectories</a></li>
+</ul>
+</li>
+<li><a href="#time-series-profiles">H.5. Time Series of Profiles</a>
+<ul class="sectlevel3">
+<li><a href="#_multidimensional_array_representations_of_time_series_profiles">H.5.1. Multidimensional array representations of time series profiles</a></li>
+<li><a href="#_time_series_of_profiles_at_a_single_station">H.5.2. Time series of profiles at a single station</a></li>
+<li><a href="#_ragged_array_representation_of_time_series_profiles">H.5.3. Ragged array representation of time series profiles</a></li>
+</ul>
+</li>
+<li><a href="#trajectory-profiles">H.6. Trajectory of Profiles</a>
+<ul class="sectlevel3">
+<li><a href="#_multidimensional_array_representation_of_trajectory_profiles">H.6.1. Multidimensional array representation of trajectory profiles</a></li>
+<li><a href="#_profiles_along_a_single_trajectory">H.6.2. Profiles along a single trajectory</a></li>
+<li><a href="#_ragged_array_representation_of_trajectory_profiles">H.6.3. Ragged array representation of trajectory profiles</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#appendix-CF-data-model">Appendix I: The CF data model</a>
+<ul class="sectlevel2">
+<li><a href="#data-model-introduction">Introduction</a></li>
+<li><a href="#data-model-design-criteria">Design criteria of the CF data model</a></li>
+<li><a href="#data-model-elements-of-cf-netcdf">Elements of CF-netCDF</a></li>
+<li><a href="#data-model-the-cf-data-model">The CF data model</a>
+<ul class="sectlevel3">
+<li><a href="#data-model-field-construct">Field construct</a></li>
+<li><a href="#data-model-domain-construct">Domain construct</a></li>
+<li><a href="#data-model-domain-axis-construct-and-the-data-array">Domain axis construct and the data array</a></li>
+<li><a href="#data-model-coordinates">Coordinates: dimension coordinate and auxiliary constructs</a></li>
+<li><a href="#data-model-coordinate-reference">Coordinate reference construct</a></li>
+<li><a href="#data-model-domain-ancillary">Domain ancillary construct</a></li>
+<li><a href="#data-model-cell-measure">Cell measure construct</a></li>
+<li><a href="#data-model-domain-topology">Domain topology construct</a></li>
+<li><a href="#data-model-cell-connectivity">Cell connectivity construct</a></li>
+<li><a href="#data-model-field-ancillary">Field ancillary constructs</a></li>
+<li><a href="#data-model-cell-method">Cell method construct</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#appendix-coordinate-subsampling">Appendix J: Coordinate Interpolation Methods</a>
+<ul class="sectlevel2">
+<li><a href="#common-definitions-and-notation">Common Definitions and Notation</a>
+<ul class="sectlevel3">
+<li><a href="#common-conversions-and-formulas">Common Conversions and Formulas</a></li>
+</ul>
+</li>
+<li><a href="#interpolation-methods">Interpolation Methods</a>
+<ul class="sectlevel3">
+<li><a href="#_linear_interpolation">Linear Interpolation</a></li>
+<li><a href="#_bilinear_interpolation">Bilinear Interpolation</a></li>
+<li><a href="#quadratic">Quadratic Interpolation</a></li>
+<li><a href="#quadratic_geo">Quadratic Interpolation of Geographic Coordinates Latitude and Longitude</a></li>
+<li><a href="#bi_quadratic_geo">Biquadratic Interpolation of Geographic Coordinates Latitude and Longitude</a></li>
+</ul>
+</li>
+<li><a href="#coordinate-compression-steps">Coordinate Compression Steps</a></li>
+<li><a href="#coordinate-uncompression-steps">Coordinate Uncompression Steps</a></li>
+</ul>
+</li>
+<li><a href="#appendix-mesh-topology-attributes">Appendix K: Mesh Topologies</a></li>
+<li><a href="#appendix-aggregation-examples">Appendix L: Aggregation Variable Examples</a></li>
+<li><a href="#appendix-leap-seconds">Appendix M: Leap Seconds</a></li>
+<li><a href="#revhistory">Revision History</a>
+<ul class="sectlevel2">
+<li><a href="#_version_1_14_draft">Version 1.14-draft</a></li>
+<li><a href="#_version_1_13_17_december_2025">Version 1.13 (17 December 2025)</a></li>
+<li><a href="#_version_1_12_04_december_2024">Version 1.12 (04 December 2024)</a></li>
+<li><a href="#_version_1_11_05_december_2023">Version 1.11 (05 December 2023)</a></li>
+<li><a href="#_version_1_10_31_august_2022">Version 1.10 (31 August 2022)</a></li>
+<li><a href="#_version_1_9_10_september_2021">Version 1.9 (10 September 2021)</a></li>
+<li><a href="#_version_1_8_11_february_2020">Version 1.8 (11 February 2020)</a></li>
+<li><a href="#_version_1_7_7_august_2017">Version 1.7 (7 August 2017)</a></li>
+<li><a href="#_version_1_6_5_december_2011">Version 1.6 (5 December 2011)</a></li>
+<li><a href="#_version_1_5_25_october_2010">Version 1.5 (25 October 2010)</a></li>
+<li><a href="#_version_1_4_27_february_2009">Version 1.4 (27 February 2009)</a></li>
+<li><a href="#_version_1_3_4_may_2008">Version 1.3 (4 May 2008)</a></li>
+<li><a href="#_version_1_2_4_may_2008">Version 1.2 (4 May 2008)</a></li>
+<li><a href="#_version_1_1_17_january_2008">Version 1.1 (17 January 2008)</a></li>
+<li><a href="#_version_1_0_28_october_2003">Version 1.0 (28 October 2003)</a></li>
+</ul>
+</li>
+<li><a href="#_bibliography">Bibliography</a>
+<ul class="sectlevel2">
+<li><a href="#_references">References</a></li>
+</ul>
+</li>
+</ul>
+</div>
 <div class="paragraph">
 <p><strong>List of Tables</strong></p>
 </div>
@@ -14953,7 +15296,7 @@ OGC document 12-063. 1st May 2015.</p>
 <div id="footer">
 <div id="footer-text">
 Version v1.12.0-rc7-24-gb724218<br>
-Last updated 2025-12-28 14:36:59 UTC
+Last updated 2025-12-29 20:51:37 UTC
 </div>
 </div>
 </body>
